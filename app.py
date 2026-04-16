@@ -26,10 +26,17 @@ load_dotenv()
 st.set_page_config(page_title="Simple Scraping + Telegram Bot Automation (POC)", layout="wide")
 st.title("Simple Scraping + Telegram Bot Automation (POC)")
 
-# Load Telegram config from environment
-TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN", "")
-TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "")
-TELEGRAM_CHANNEL_URL = os.getenv("TELEGRAM_CHANNEL_URL", "")
+# Load Telegram config from Streamlit secrets (cloud) or environment (local)
+def _get_secret(key: str) -> str:
+    try:
+        return st.secrets[key]
+    except (KeyError, FileNotFoundError):
+        return os.getenv(key, "")
+
+
+TELEGRAM_TOKEN = _get_secret("TELEGRAM_TOKEN")
+TELEGRAM_CHAT_ID = _get_secret("TELEGRAM_CHAT_ID")
+TELEGRAM_CHANNEL_URL = _get_secret("TELEGRAM_CHANNEL_URL")
 
 # Scraping examples
 EXAMPLES = {
