@@ -1,0 +1,20 @@
+2026-04-16 17:04:09,292 [scraper] INFO: Scraping http://quotes.toscrape.com with selector '.quote .text'
+2026-04-16 17:04:09,556 [scraper] INFO: Found 10 elements
+2026-04-16 17:37:10,346 [scraper] INFO: Scraping http://quotes.toscrape.com with selector '.quote .text'
+2026-04-16 17:37:10,601 [scraper] INFO: Found 10 elements
+2026-04-16 17:37:15,474 [telegram_bot] INFO: Sent message 5, will auto-delete in 60s
+2026-04-16 17:47:59,166 [scraper] INFO: Scraping https://news.ycombinator.com with selector '.titleline > a'
+2026-04-16 17:47:59,801 [scraper] INFO: Found 30 elements
+2026-04-16 17:49:15,161 [telegram_bot] INFO: Auto-deleted message 6
+2026-04-16 17:50:25,780 [scraper] INFO: Scraping https://news.ycombinator.com with selector '.titleline > a'
+2026-04-16 17:50:26,420 [scraper] INFO: Found 30 elements
+2026-04-16 17:50:57,956 [scraper] INFO: Scraping https://news.ycombinator.com with selector '.titleline > a'
+2026-04-16 17:50:58,590 [scraper] INFO: Found 30 elements
+2026-04-16 17:51:27,333 [telegram_bot] INFO: Auto-deleted message 7
+2026-04-16 17:51:30,151 [scraper] INFO: Scraping https://news.ycombinator.com with selector '.titleline > a'
+2026-04-16 17:51:30,783 [scraper] INFO: Found 30 elements
+2026-04-16 17:51:59,564 [telegram_bot] INFO: Auto-deleted message 8
+2026-04-16 17:52:31,657 [telegram_bot] INFO: Auto-deleted message 9
+2026-04-16 17:53:10,162 [scraper] INFO: Scraping https://news.ycombinator.com with selector '.titleline > a'
+2026-04-16 17:53:10,796 [scraper] INFO: Found 30 elements
+2026-04-16 17:54:14,805 [telegram_bot] INFO: Auto-deleted message 10
