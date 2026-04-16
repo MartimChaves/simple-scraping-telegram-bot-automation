@@ -23,8 +23,8 @@ from telegram_bot import schedule_delete, send_message
 
 load_dotenv()
 
-st.set_page_config(page_title="Simple Scraping + Telegram Bot Automation (MVP)", layout="wide")
-st.title("Simple Scraping + Telegram Bot Automation (MVP)")
+st.set_page_config(page_title="Simple Scraping + Telegram Bot Automation (POC)", layout="wide")
+st.title("Simple Scraping + Telegram Bot Automation (POC)")
 
 # Load Telegram config from environment
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN", "")
@@ -82,6 +82,28 @@ with st.sidebar:
 
     url = st.text_input("Target URL", value=default_url)
     selector = st.text_input("CSS Selector", value=default_selector)
+
+    with st.expander("How do CSS selectors work?"):
+        st.markdown("""
+A CSS selector tells the scraper **which elements to extract** from the page.
+
+| Selector | Matches |
+|----------|---------|
+| `p` | All `<p>` elements |
+| `.quote` | Elements with `class="quote"` |
+| `#title` | Element with `id="title"` |
+| `.quote .text` | `.text` **inside** `.quote` |
+| `h3 a` | Links inside `<h3>` headings |
+| `.titleline > a` | Links that are **direct children** of `.titleline` |
+
+**How the examples work:**
+- **Quotes to Scrape** — `.quote .text` grabs the quote text inside each quote block
+- **Hacker News** — `.titleline > a` grabs the link in each title row
+- **Books to Scrape** — `.product_pod h3 a` grabs the book title link in each card
+
+**To find selectors for any site:** right-click an element in Chrome → Inspect → note the class names and nesting.
+""")
+
     output_format = st.selectbox("Output Format", ["JSON", "CSV"])
 
     if st.button("Scrape Now"):
